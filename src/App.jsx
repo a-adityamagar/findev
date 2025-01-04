@@ -3,6 +3,8 @@ import NavBar from './components/Navbar'
 import Intro from './components/Intro'
 import GetStarted from './components/GetStarted'
 import Services from './components/Services'
+import WhyUs from './components/WhyUs'
+
 
 export default function App() {
   return (
@@ -11,6 +13,7 @@ export default function App() {
       <Intro/>
       <GetStarted/>
       <Services/>
+      <WhyUs/>
     </div>
   )
 }
