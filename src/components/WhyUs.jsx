@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+import good from "../assets/good.png";
+import search from "../assets/search.png";
+import select from "../assets/select.png";
 
 const WhyUs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -11,19 +14,19 @@ const WhyUs = () => {
       title: "SEARCH",
       description:
         "Use reliable search and filtering options to efficiently find agencies that match your needs, considering services, experience, pricing, and other relevant criteria.",
-      image: "path/to/search-image.png",
+      image: search,
     },
     {
       title: "SHORTLIST",
       description:
         "Refine your options by evaluating portfolios, client reviews, and expertise to compile a focused list of agencies that best match your project needs.",
-      image: "path/to/shortlist-image.png",
+      image: good,
     },
     {
       title: "SELECT",
       description:
         "Make your final choice by assessing proposals, communication, and overall fit to ensure the agency aligns perfectly with your project goals and expectations.",
-      image: "path/to/select-image.png",
+      image: select,
     },
   ];
 
@@ -64,22 +67,22 @@ const WhyUs = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 mx-4 md:mx:16 lg:mx-24 xl:mx-32 2xl:mx-48">
       <h2 className="text-2xl font-bold text-center mb-6">HOW DOES IT WORK?</h2>
       
       {/* Desktop view */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-10">
         {data.map((item, index) => (
           <div
             key={index}
             className="bg-blue-500 text-white p-6 rounded-lg shadow-lg flex flex-col items-center"
           >
-            <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-            <p className="text-sm mb-6">{item.description}</p>
+            <h3 className="text-3xl font-bold mb-3">{item.title}</h3>
+            <p className="text-sm mb-3">{item.description}</p>
             <img
               src={item.image}
               alt={item.title}
-              className="w-24 h-24 object-contain"
+              className="sm:w-48 sm:h-48 object-contain "
             />
           </div>
         ))}
@@ -101,14 +104,14 @@ const WhyUs = () => {
             {data.map((item, index) => (
               <div
                 key={index}
-                className="w-full flex-shrink-0 flex flex-col items-center bg-blue-500 text-white p-4 rounded-lg shadow-lg"
+                className="w-full flex-shrink-0 flex flex-col items-center bg-blue-500 text-white p-4 rounded-lg shadow-lg "
               >
-                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                <p className="text-xs mb-4 text-center">{item.description}</p>
+                <h3 className="text-3xl font-bold mb-3">{item.title}</h3>
+                <p className="text-sm mb-4 text-center">{item.description}</p>
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-20 h-20 object-contain"
+                  className="w-48 h-48 object-contain "
                 />
               </div>
             ))}
